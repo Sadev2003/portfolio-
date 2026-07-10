@@ -165,8 +165,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const visitorCountEl = document.getElementById('visitorCount');
   
   const updateVisitorCounter = async () => {
-    // Replace this string with your real Azure Function App base URL when deployed
-    const azureFunctionApiUrl = 'http://localhost:7071/api/GetResumeCounter';
+    // Target your newly deployed standalone production Azure Function URL
+    const azureFunctionApiUrl = 'https://sadev-portfolio-counter.azurewebsites.net/api/visitor_counter';
     
     if (visitorCountEl) {
       try {
@@ -174,16 +174,26 @@ document.addEventListener('DOMContentLoaded', () => {
         const response = await fetch(azureFunctionApiUrl);
         if (!response.ok) throw new Error('API server boundary connection error.');
         
-        const data = await response.json(); // Expected payload format structural design: { "count": 1482 }
+        // Parse the raw text response: "Visitor count updated to: X"
+        const textData = await response.text(); 
+        
+        // Extract the numerical digits from the text string using regex
+        const matches = textData.match(/\d+/);
+        const count = matches ? parseInt(matches[0], 10) : 0;
         
         // Format integer text neatly with structural standard delimiter breaks (e.g., 1,482)
         const formatNumber = (num) => num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        visitorCountEl.textContent = formatNumber(data.count);
+        
+        visitorCountEl.textContent = formatNumber(count);
       } catch (error) {
         console.error('Error fetching live visitor telemetry:', error);
         visitorCountEl.textContent = "---"; // Safe graceful static state fallback 
       }
     }
+  };
+
+  // Dispatch API tunnel transaction on initial lifecycle paint load
+  updateVisitorCounter();
   };
 
   // Dispatch API tunnel transaction on initial lifecycle paint load
