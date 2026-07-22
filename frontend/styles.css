@@ -108,8 +108,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.85rem 2rem;
-  max-width: 1200px;
+  padding: 0.85rem 1.5rem;
+  max-width: 1400px;
   margin: 0 auto;
   gap: 1.5rem;
 }
@@ -276,8 +276,8 @@ input:checked + .slider::before {
 
 /* Main Sections layout with tightened paddings */
 .section {
-  padding: 45px 2rem;
-  max-width: 1200px;
+  padding: 45px 1.5rem;
+  max-width: 1400px;
   margin: 0 auto;
   transition: background-color var(--transition-speed), color var(--transition-speed);
 }
@@ -558,9 +558,9 @@ input:checked + .slider::before {
   justify-content: center;
   gap: 1.5rem;
   width: 100%;
-  max-width: 1100px;
+  max-width: 1300px;
   margin: 2rem auto;
-  padding: 0 1rem;
+  padding: 0 0.5rem;
 }
 
 .tech-card {
@@ -740,9 +740,9 @@ input:checked + .slider::before {
   grid-template-columns: repeat(6, 1fr);
   gap: 1.5rem;
   width: 100%;
-  max-width: 1100px;
+  max-width: 1300px;
   margin: 2rem auto;
-  padding: 0 1rem;
+  padding: 0 0.5rem;
 }
 
 .project-bento-card {
@@ -906,7 +906,7 @@ input:checked + .slider::before {
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
-  max-width: 900px;
+  max-width: 1100px;
   margin: 0 auto;
   width: 100%;
 }
@@ -932,7 +932,7 @@ input:checked + .slider::before {
   display: grid;
   grid-template-columns: 0.95fr 1.05fr;
   gap: 3rem;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
   align-items: start;
 }
@@ -1324,7 +1324,7 @@ footer {
   justify-content: center;
   gap: 2.5rem 1.75rem;
   width: 100%;
-  max-width: 1100px;
+  max-width: 1300px;
   margin: 1.5rem auto 0;
 }
 
@@ -1380,7 +1380,7 @@ footer {
   .carousel-wrapper {
     position: relative;
     width: 100%;
-    max-width: 1100px;
+    max-width: 1300px;
     margin: 0 auto;
     padding: 20px 0;
     box-sizing: border-box;
