@@ -357,187 +357,194 @@
   <!-- PROJECTS SECTION -->
   <section class="section" id="projects">
     <h2 class="section-title reveal">Featured Projects</h2>
+    <p class="section-subtitle reveal" style="text-align: center; max-width: 600px; margin: -1rem auto 3rem; color: var(--text-secondary); font-size: 1.05rem; line-height: 1.5;">
+      A showcase of engineered systems, serverless cloud solutions, and automation engines
+    </p>
 
-    <div class="carousel-wrapper reveal">
-      <!-- Left Carousel Arrow -->
-      <button class="carousel-btn prev-btn" aria-label="Previous Slide">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-          stroke-linejoin="round">
-          <polyline points="15 18 9 12 15 6"></polyline>
-        </svg>
-      </button>
-
-      <div class="projects-grid">
-        <!-- Project 1: Serverless Portfolio Platform -->
-        <div class="project-card">
-          <span class="project-status active">PRODUCTION</span>
-          <h3 class="project-card-title">Serverless Portfolio Platform &amp; Integration Engine</h3>
-          <p class="project-desc">
-            Engineered and deployed a highly scalable, two-tier serverless portfolio platform utilizing Azure Static Web
-            Apps for optimized global frontend delivery and Azure Functions (Python) as the backend microservices API.
-            Designed and built a dynamic NoSQL database layer with Azure Cosmos DB to securely store transaction
-            payloads and track real-time visitor analytics.
-          </p>
-          <p class="project-outcome">Outcome: Successfully hardened application security, solved async serverless
-            freezes, and established rate limiting.</p>
-          <div class="project-tech-list">
-            <span class="project-badge">Azure Functions</span>
-            <span class="project-badge">Azure SWA</span>
-            <span class="project-badge">Cosmos DB</span>
-            <span class="project-badge">Communication Services</span>
-            <span class="project-badge">Python</span>
-            <span class="project-badge">Git</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/Sadev2003/portfolio" target="_blank" class="project-link">
-              <svg viewBox="0 0 16 16" fill="currentColor">
-                <path
-                  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-              </svg>
-              GitHub
-            </a>
-          </div>
+    <div class="projects-bento-grid reveal">
+      <!-- Project 1: Serverless Portfolio Platform (Spotlight) -->
+      <div class="project-bento-card bento-spotlight">
+        <div class="project-bento-badge-row">
+          <span class="project-status production">PRODUCTION</span>
+          <span class="project-category-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px;">
+              <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>
+            </svg>
+            Cloud Platform
+          </span>
         </div>
-
-        <!-- Project 2: Building Energy Optimization -->
-        <div class="project-card">
-          <span class="project-status active">COMPLETED</span>
-          <h3 class="project-card-title">Building Energy Optimization &amp; Automation</h3>
-          <p class="project-desc">
-            Designed an IoT energy optimization platform for institutional campus environments. Built ESP32-based Main
-            Control Units (MCU) for real-time sensor polling (temperature, humidity, motion, CO₂) and Switch Control
-            Units (SCU) to retrofit manual switches. Developed a FastAPI centralized server using WebSockets/MQTT for
-            instant message routing and telemetry processing, backed by a React web dashboard.
-          </p>
-          <p class="project-outcome">Outcome: Successfully reduced wasted campus power, retrofitted legacy systems, and
-            achieved zero-loss remote control.</p>
-          <div class="project-tech-list">
-            <span class="project-badge">IoT</span>
-            <span class="project-badge">React</span>
-            <span class="project-badge">FastAPI</span>
-            <span class="project-badge">WebSockets</span>
-            <span class="project-badge">MQTT</span>
-            <span class="project-badge">ESP32</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/dev-dojo-uok/iot-manager" target="_blank" class="project-link">
-              <svg viewBox="0 0 16 16" fill="currentColor">
-                <path
-                  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-              </svg>
-              GitHub
-            </a>
-            <a href="https://drive.google.com/drive/folders/1YwwHOhY673IeTdOhQ7tOFXyBvlYqu_HK?usp=drive_link"
-              target="_blank" class="project-link">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z" />
-              </svg>
-              Research Folder
-            </a>
-          </div>
+        <h3 class="project-bento-title">Serverless Portfolio Platform &amp; Integration Engine</h3>
+        <p class="project-bento-desc">
+          Engineered and deployed a highly scalable, two-tier serverless portfolio platform utilizing Azure Static Web Apps for optimized global frontend delivery and Azure Functions (Python) as the backend microservices API. Designed and built a dynamic NoSQL database layer with Azure Cosmos DB to securely store transaction payloads and track real-time visitor analytics.
+        </p>
+        <p class="project-bento-outcome"><strong>Outcome:</strong> Hardened security with an proxy-header rate limiter, solved async serverless database freezes, and automated email deliveries.</p>
+        <div class="project-bento-tech-list">
+          <span class="project-badge">Azure Functions</span>
+          <span class="project-badge">Azure SWA</span>
+          <span class="project-badge">Cosmos DB</span>
+          <span class="project-badge">Communication Services</span>
+          <span class="project-badge">Python</span>
+          <span class="project-badge">Git</span>
         </div>
-
-        <!-- Project 3: Mobile Shop POS -->
-        <div class="project-card">
-          <span class="project-status active">PRODUCTION</span>
-          <h3 class="project-card-title">Mobile Shop POS</h3>
-          <p class="project-desc">
-            Engineered a complete business management system featuring multi-user authentication, robust inventory
-            management, device repair ticket tracking, marketing tools, and automated invoice delivery.
-          </p>
-          <p class="project-outcome">Outcome: Provided shop owners with a centralized system, increasing tracking
-            efficiency and automating billing workflows.</p>
-          <div class="project-tech-list">
-            <span class="project-badge">Next.js</span>
-            <span class="project-badge">MongoDB</span>
-            <span class="project-badge">Node.js</span>
-            <span class="project-badge">Prisma</span>
-          </div>
-          <div class="project-links">
-            <a href="https://www.akaigen.com/pos" target="_blank" class="project-link">
-              <svg viewBox="0 0 24 24" fill="currentColor" style="width: 12px; height: 12px;">
-                <path
-                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
-              </svg>
-              Website
-            </a>
-          </div>
-        </div>
-
-        <!-- Project 4: Flavor POS Restaurant Management -->
-        <div class="project-card">
-          <span class="project-status active">COMPLETED</span>
-          <h3 class="project-card-title">Flavor POS - Restaurant Management</h3>
-          <p class="project-desc">
-            Developed a centralized web platform to optimize restaurant operations by connecting customers, cashiers,
-            kitchen staff, delivery riders, and system administrators. Features separate role-based dashboards that
-            allow smooth order handling, real-time status updates, and enhanced coordination between all users.
-          </p>
-          <p class="project-outcome">Outcome: Developed as part of coursework to master role-based system design and web
-            development fundamentals.</p>
-          <div class="project-tech-list">
-            <span class="project-badge">PHP</span>
-            <span class="project-badge">HTML</span>
-            <span class="project-badge">CSS</span>
-            <span class="project-badge">JavaScript</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/dev-dojo-uok/flavour-pos" target="_blank" class="project-link">
-              <svg viewBox="0 0 16 16" fill="currentColor">
-                <path
-                  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-              </svg>
-              GitHub
-            </a>
-            <a href="https://flavour.akaigen.online/index.php" target="_blank" class="project-link">
-              <svg viewBox="0 0 24 24" fill="currentColor" style="width: 12px; height: 12px;">
-                <path
-                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
-              </svg>
-              Live Demo
-            </a>
-          </div>
-        </div>
-
-        <!-- Project 5: Rebuild Donation Coordination -->
-        <div class="project-card">
-          <span class="project-status active">ONGOING</span>
-          <h3 class="project-card-title">Rebuild - Donation Coordination Platform</h3>
-          <p class="project-desc">
-            Designed and built a web platform bridging organizations and donors for transparent resource pledging.
-            Developed a role-based access model with Django/PostgreSQL backend and Next.js/TypeScript frontend. Built
-            admin workflows for pending registration approvals, automated geocoding for organization address changes,
-            and integrated Google Gemini AI for structured need extraction from uploaded PDF documents.
-          </p>
-          <p class="project-outcome">Outcome: Enforced secure data processing, solved geocode updates, and automated PDF
-            need recognition.</p>
-          <div class="project-tech-list">
-            <span class="project-badge">Next.js</span>
-            <span class="project-badge">Django</span>
-            <span class="project-badge">PostgreSQL</span>
-            <span class="project-badge">Python</span>
-            <span class="project-badge">Google Gemini AI</span>
-            <span class="project-badge">Docker</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/PrabathKuruwita/rebuild_man" target="_blank" class="project-link">
-              <svg viewBox="0 0 16 16" fill="currentColor">
-                <path
-                  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-              </svg>
-              GitHub
-            </a>
-          </div>
+        <div class="project-bento-links">
+          <a href="https://github.com/Sadev2003/portfolio" target="_blank" class="project-bento-link">
+            <svg viewBox="0 0 16 16" fill="currentColor">
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+            </svg>
+            GitHub
+          </a>
         </div>
       </div>
 
-      <!-- Right Carousel Arrow -->
-      <button class="carousel-btn next-btn" aria-label="Next Slide">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-          stroke-linejoin="round">
-          <polyline points="9 18 15 12 9 6"></polyline>
-        </svg>
-      </button>
+      <!-- Project 2: Rebuild Donation Coordination Platform (Spotlight) -->
+      <div class="project-bento-card bento-spotlight">
+        <div class="project-bento-badge-row">
+          <span class="project-status ongoing">ONGOING</span>
+          <span class="project-category-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px;">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+            AI &amp; Web Platform
+          </span>
+        </div>
+        <h3 class="project-bento-title">Rebuild - Donation Coordination Platform</h3>
+        <p class="project-bento-desc">
+          Designed and built a web platform bridging organizations and donors for transparent resource pledging. Developed a role-based access model with Django/PostgreSQL backend and Next.js/TypeScript frontend. Built admin workflows for pending registration approvals, automated geocoding for organization address changes, and integrated Google Gemini AI for structured need extraction from uploaded PDF documents.
+        </p>
+        <p class="project-bento-outcome"><strong>Outcome:</strong> Enforced secure data processing, solved geocode updates, and automated PDF need recognition.</p>
+        <div class="project-bento-tech-list">
+          <span class="project-badge">Next.js</span>
+          <span class="project-badge">Django</span>
+          <span class="project-badge">PostgreSQL</span>
+          <span class="project-badge">Python</span>
+          <span class="project-badge">Google Gemini AI</span>
+          <span class="project-badge">Docker</span>
+        </div>
+        <div class="project-bento-links">
+          <a href="https://github.com/PrabathKuruwita/rebuild_man" target="_blank" class="project-bento-link">
+            <svg viewBox="0 0 16 16" fill="currentColor">
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+            </svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 3: Mobile Shop POS (Standard) -->
+      <div class="project-bento-card bento-standard">
+        <div class="project-bento-badge-row">
+          <span class="project-status production">PRODUCTION</span>
+          <span class="project-category-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px;">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+              <line x1="8" y1="21" x2="16" y2="21"/>
+              <line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+            ERP &amp; POS
+          </span>
+        </div>
+        <h3 class="project-bento-title">Mobile Shop POS</h3>
+        <p class="project-bento-desc">
+          Engineered a complete business management system featuring multi-user authentication, inventory tracking, repair ticket lifecycle management, and marketing tools.
+        </p>
+        <p class="project-bento-outcome"><strong>Outcome:</strong> Centralized business tracking and automated customer billing workflows.</p>
+        <div class="project-bento-tech-list">
+          <span class="project-badge">Next.js</span>
+          <span class="project-badge">MongoDB</span>
+          <span class="project-badge">Node.js</span>
+          <span class="project-badge">Prisma</span>
+        </div>
+        <div class="project-bento-links">
+          <a href="https://www.akaigen.com/pos" target="_blank" class="project-bento-link">
+            <svg viewBox="0 0 24 24" fill="currentColor" style="width: 12px; height: 12px;">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+            </svg>
+            Website
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 4: Flavor POS Restaurant Management (Standard) -->
+      <div class="project-bento-card bento-standard">
+        <div class="project-bento-badge-row">
+          <span class="project-status completed">COMPLETED</span>
+          <span class="project-category-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px;">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+            Collaborative Web
+          </span>
+        </div>
+        <h3 class="project-bento-title">Flavor POS - Restaurant Management</h3>
+        <p class="project-bento-desc">
+          Developed a centralized web platform connecting customers, kitchen, cashiers, delivery, and admins with live order updates and role-based control dashboards.
+        </p>
+        <p class="project-bento-outcome"><strong>Outcome:</strong> Group coursework project establishing solid fundamentals in multi-role system design.</p>
+        <div class="project-bento-tech-list">
+          <span class="project-badge">PHP</span>
+          <span class="project-badge">HTML</span>
+          <span class="project-badge">CSS</span>
+          <span class="project-badge">JavaScript</span>
+        </div>
+        <div class="project-bento-links">
+          <a href="https://github.com/dev-dojo-uok/flavour-pos" target="_blank" class="project-bento-link">
+            <svg viewBox="0 0 16 16" fill="currentColor">
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+            </svg>
+            GitHub
+          </a>
+          <a href="https://flavour.akaigen.online/index.php" target="_blank" class="project-bento-link">
+            <svg viewBox="0 0 24 24" fill="currentColor" style="width: 12px; height: 12px;">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+            </svg>
+            Live Demo
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 5: Building Energy Optimization (Standard) -->
+      <div class="project-bento-card bento-standard">
+        <div class="project-bento-badge-row">
+          <span class="project-status completed">COMPLETED</span>
+          <span class="project-category-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px;">
+              <path d="M18 110h.01"/>
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+            </svg>
+            IoT &amp; Automation
+          </span>
+        </div>
+        <h3 class="project-bento-title">Building Energy Optimization &amp; Automation</h3>
+        <p class="project-bento-desc">
+          Designed an IoT energy optimization system. Built ESP32 sensor pollers, switch control units, and a centralized FastAPI server using MQTT/WebSockets, backed by a React dashboard.
+        </p>
+        <p class="project-bento-outcome"><strong>Outcome:</strong> Achieved automated load shedding, zero-loss remote appliance control, and active power tracking.</p>
+        <div class="project-bento-tech-list">
+          <span class="project-badge">IoT</span>
+          <span class="project-badge">React</span>
+          <span class="project-badge">FastAPI</span>
+          <span class="project-badge">MQTT</span>
+          <span class="project-badge">ESP32</span>
+        </div>
+        <div class="project-bento-links">
+          <a href="https://github.com/dev-dojo-uok/iot-manager" target="_blank" class="project-bento-link">
+            <svg viewBox="0 0 16 16" fill="currentColor">
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+            </svg>
+            GitHub
+          </a>
+          <a href="https://drive.google.com/drive/folders/1YwwHOhY673IeTdOhQ7tOFXyBvlYqu_HK?usp=drive_link" target="_blank" class="project-bento-link">
+            <svg viewBox="0 0 24 24" fill="currentColor" style="width: 12px; height: 12px;">
+              <path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z" />
+            </svg>
+            Research Folder
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 

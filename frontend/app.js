@@ -460,14 +460,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const setupCarousel = (wrapper) => {
     if (!wrapper) return;
     
-    const grid = wrapper.querySelector('.skills-grid') 
-              || wrapper.querySelector('.projects-grid')
-              || wrapper.querySelector('.certs-grid');
+    const grid = wrapper.querySelector('.certs-grid');
     const prevBtn = wrapper.querySelector('.prev-btn');
     const nextBtn = wrapper.querySelector('.next-btn');
     if (!grid || !prevBtn || !nextBtn) return;
     
-    const cards = Array.from(grid.querySelectorAll('.skill-card, .project-card, .cert-card'));
+    const cards = Array.from(grid.querySelectorAll('.cert-card'));
     if (cards.length === 0) return;
     
     // Start with the center card active
@@ -557,4 +555,89 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // 10. Achievements & Badges Dynamic Row Wave Effect
+  const setupBadgeWaveEffect = () => {
+    const grid = document.querySelector('.badges-grid');
+    if (!grid) return;
+    
+    const cards = Array.from(grid.querySelectorAll('.badge-card'));
+    if (cards.length === 0) return;
+    
+    const resetAll = () => {
+      cards.forEach(card => {
+        card.style.removeProperty('--wave-lift');
+        card.style.removeProperty('--wave-scale');
+        card.style.removeProperty('--wave-rotate');
+        card.style.removeProperty('--wave-shadow');
+        card.style.removeProperty('--wave-title-color');
+      });
+    };
+    
+    cards.forEach(c => {
+      c.addEventListener('mouseenter', () => {
+        const offsetTop = c.offsetTop;
+        
+        // Find all cards in the same row
+        const rowCards = cards.filter(card => Math.abs(card.offsetTop - offsetTop) < 10);
+        const hoverIdx = rowCards.indexOf(c);
+        
+        // Reset cards in other rows
+        cards.forEach(card => {
+          if (!rowCards.includes(card)) {
+            card.style.removeProperty('--wave-lift');
+            card.style.removeProperty('--wave-scale');
+            card.style.removeProperty('--wave-rotate');
+            card.style.removeProperty('--wave-shadow');
+            card.style.removeProperty('--wave-title-color');
+          }
+        });
+        
+        // Apply wave properties to the row cards
+        rowCards.forEach((card, j) => {
+          const dist = Math.abs(j - hoverIdx);
+          
+          let lift, scale, rotate, glowColor;
+          if (dist === 0) {
+            lift = '12px';
+            scale = '1.1';
+            rotate = '-3deg';
+            glowColor = 'rgba(172, 129, 192, 0.45)';
+            card.style.setProperty('--wave-title-color', 'var(--accent-color)');
+          } else if (dist === 1) {
+            lift = '8px';
+            scale = '1.06';
+            rotate = '-1.5deg';
+            glowColor = 'rgba(172, 129, 192, 0.25)';
+            card.style.setProperty('--wave-title-color', 'var(--accent-light)');
+          } else if (dist === 2) {
+            lift = '4px';
+            scale = '1.03';
+            rotate = '-0.5deg';
+            glowColor = 'rgba(172, 129, 192, 0.15)';
+            card.style.setProperty('--wave-title-color', 'var(--text-color)');
+          } else {
+            lift = '0px';
+            scale = '1';
+            rotate = '0deg';
+            glowColor = 'rgba(0, 0, 0, 0.4)';
+            card.style.setProperty('--wave-title-color', 'var(--text-color)');
+          }
+          
+          card.style.setProperty('--wave-lift', lift);
+          card.style.setProperty('--wave-scale', scale);
+          card.style.setProperty('--wave-rotate', rotate);
+          if (dist <= 2) {
+            card.style.setProperty('--wave-shadow', `drop-shadow(0 8px 16px ${glowColor})`);
+          } else {
+            card.style.setProperty('--wave-shadow', `drop-shadow(0 4px 10px ${glowColor})`);
+          }
+        });
+      });
+    });
+    
+    grid.addEventListener('mouseleave', resetAll);
+  };
+
+  setupBadgeWaveEffect();
 });

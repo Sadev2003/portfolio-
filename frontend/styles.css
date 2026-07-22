@@ -585,7 +585,7 @@ input:checked + .slider::before {
 .tech-glow {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, rgba(0, 132, 255, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle at center, rgba(172, 129, 192, 0.15) 0%, transparent 70%);
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
@@ -619,8 +619,8 @@ input:checked + .slider::before {
 /* Hover effects */
 .tech-card:hover {
   transform: translateY(-8px) scale(1.03) !important;
-  border-color: #0084ff;
-  box-shadow: 0 8px 25px rgba(0, 132, 255, 0.25);
+  border-color: var(--accent-color);
+  box-shadow: 0 8px 25px var(--accent-glow);
   background-color: var(--card-hover-bg);
 }
 
@@ -633,7 +633,7 @@ input:checked + .slider::before {
 }
 
 .tech-card:hover .tech-name {
-  color: #00c6ff;
+  color: var(--accent-light);
 }
 
 /* Expansion functionality */
@@ -665,7 +665,7 @@ input:checked + .slider::before {
 }
 
 .show-all-btn {
-  background: linear-gradient(135deg, #0084ff, #00c6ff);
+  background: linear-gradient(135deg, var(--accent-secondary), var(--accent-color));
   color: #ffffff;
   border: none;
   padding: 0.85rem 2.2rem;
@@ -673,7 +673,7 @@ input:checked + .slider::before {
   font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0, 132, 255, 0.3);
+  box-shadow: 0 4px 15px var(--accent-glow);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -687,7 +687,7 @@ input:checked + .slider::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #00c6ff, #0084ff);
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-secondary));
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: -1;
@@ -695,7 +695,7 @@ input:checked + .slider::before {
 
 .show-all-btn:hover {
   transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 6px 20px rgba(0, 132, 255, 0.45);
+  box-shadow: 0 6px 20px var(--accent-glow);
 }
 
 .show-all-btn:hover::before {
@@ -735,131 +735,168 @@ input:checked + .slider::before {
 }
 
 /* PROJECTS SECTION */
-.projects-grid {
-  display: flex;
-  gap: 2.5rem;
-  width: max-content;
-  overflow: visible;
-  will-change: transform;
-  transition: transform 0.1s ease-out;
-  padding: 10px 5px 25px;
+.projects-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1rem;
 }
 
-.project-card {
-  flex: 0 0 350px !important;
+.project-bento-card {
+  position: relative;
   background-color: var(--card-bg);
-  border: 1px solid var(--border-color);
+  border: 1.5px solid var(--border-color);
   border-radius: 20px;
-  padding: 1.5rem;
-  box-shadow: var(--shadow-sm);
+  padding: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  transition: all 0.3s ease;
-  position: relative;
+  gap: 1.25rem;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
   overflow: hidden;
+  justify-content: flex-start;
 }
 
-.project-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--accent-color), var(--accent-secondary));
+.bento-spotlight {
+  grid-column: span 3;
 }
 
-.project-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px var(--accent-glow);
-  border-color: var(--border-hover);
+.bento-standard {
+  grid-column: span 2;
+}
+
+.project-bento-card:hover {
+  transform: translateY(-8px) scale(1.02) !important;
+  border-color: var(--accent-color);
+  box-shadow: 0 10px 30px var(--accent-glow);
+}
+
+.project-bento-badge-row {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
 }
 
 .project-status {
-  align-self: flex-start;
   font-family: var(--font-mono);
   font-size: 0.65rem;
   font-weight: 700;
   padding: 0.15rem 0.5rem;
   border-radius: 4px;
+  align-self: flex-start;
 }
 
-.project-status.active {
+.project-status.production {
   background-color: rgba(16, 185, 129, 0.1);
   color: #10b981;
   border: 1px solid #10b981;
 }
 
-.project-status.building {
+.project-status.ongoing {
   background-color: rgba(245, 158, 11, 0.1);
   color: #f59e0b;
   border: 1px solid #f59e0b;
 }
 
-.project-card-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--text-color);
+.project-status.completed {
+  background-color: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+  border: 1px solid #3b82f6;
 }
 
-.project-desc {
+.project-category-badge {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
   color: var(--text-secondary);
-  font-size: 0.9rem;
-  line-height: 1.45;
-  flex-grow: 1;
+  opacity: 0.85;
 }
 
-.project-outcome {
-  font-size: 0.82rem;
+.project-bento-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.project-bento-desc {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.project-bento-outcome {
+  font-size: 0.85rem;
   color: var(--text-secondary);
   font-style: italic;
-  border-left: 2px solid var(--accent-color);
-  padding-left: 0.65rem;
-  margin: 0.15rem 0;
+  border-left: 3px solid var(--accent-color);
+  padding-left: 0.75rem;
+  margin: 0.5rem 0;
 }
 
-.project-tech-list {
+.project-bento-tech-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.45rem;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 0.5rem;
 }
 
 .project-badge {
-  background: linear-gradient(45deg, var(--accent-color), var(--accent-secondary));
-  color: #ffffff;
-  border: none;
-  font-size: 0.7rem;
+  background: linear-gradient(135deg, rgba(172, 129, 192, 0.08), rgba(108, 92, 231, 0.08));
+  border: 1px solid rgba(172, 129, 192, 0.25);
+  color: var(--accent-light);
+  font-size: 0.72rem;
   font-weight: 700;
-  padding: 0.2rem 0.55rem;
+  padding: 0.25rem 0.65rem;
   border-radius: 12px;
+  transition: all 0.3s ease;
 }
 
-.project-links {
+.project-bento-card:hover .project-badge {
+  border-color: rgba(172, 129, 192, 0.45);
+  background: linear-gradient(135deg, rgba(172, 129, 192, 0.12), rgba(108, 92, 231, 0.12));
+}
+
+.project-bento-links {
   display: flex;
-  gap: 0.85rem;
+  gap: 1rem;
   border-top: 1px solid var(--border-color);
-  padding-top: 1rem;
-  margin-top: 0.25rem;
+  padding-top: 1.25rem;
+  margin-top: 0.5rem;
 }
 
-.project-link {
+.project-bento-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.3rem;
+  gap: 0.4rem;
   font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 700;
   color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-.project-link:hover {
-  color: var(--accent-color);
+.project-bento-link:hover {
+  color: var(--accent-light);
 }
 
-.project-link svg {
-  width: 12px;
-  height: 12px;
+.project-bento-link svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.3s ease;
+}
+
+.project-bento-link:hover svg {
+  transform: scale(1.1);
 }
 
 
@@ -1317,7 +1354,8 @@ footer {
   position: relative;
   background: transparent;
   padding: 0px;
-  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.4));
+  transform: scale(var(--wave-scale, 1)) translateY(calc(-1 * var(--wave-lift, 0px))) rotate(var(--wave-rotate, 0deg));
+  filter: var(--wave-shadow, drop-shadow(0 4px 10px rgba(0, 0, 0, 0.4)));
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.15),
               filter 0.4s ease;
 }
@@ -1331,19 +1369,10 @@ footer {
 .badge-title {
   font-size: 0.76rem;
   font-weight: 600;
-  color: var(--text-color);
+  color: var(--wave-title-color, var(--text-color));
   line-height: 1.3;
   max-width: 160px;
   transition: color 0.3s;
-}
-
-.badge-card:hover .badge-icon-wrapper {
-  transform: scale(1.08) translateY(-4px) rotate(-3deg);
-  filter: drop-shadow(0 8px 20px rgba(0, 188, 242, 0.55));
-}
-
-.badge-card:hover .badge-title {
-  color: var(--accent-color);
 }
 
 /* Carousel Ribbon Loop Chain Layouts */
@@ -1360,29 +1389,8 @@ footer {
     align-items: center;
   }
 
-  .skills-grid {
-    position: relative;
-    height: 320px;
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
-    display: block;
-    overflow: visible !important;
-  }
-
-  .projects-grid {
-    position: relative;
-    height: 520px;
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
-    display: block;
-    overflow: visible !important;
-  }
-
   /* Each card is positioned absolutely and transitioned in 3D ribbon space */
-  .skills-grid .skill-card,
-  .projects-grid .project-card {
+  .certs-grid .cert-card {
     position: absolute !important;
     width: 320px !important;
     margin: 0 !important;
@@ -1395,11 +1403,7 @@ footer {
     will-change: transform, opacity;
   }
 
-  .skills-grid .skill-card {
-    height: auto !important;
-  }
-
-  .projects-grid .project-card {
+  .certs-grid .cert-card {
     height: auto !important;
   }
 
@@ -1448,7 +1452,7 @@ footer {
     overflow: visible;
   }
 
-  .skills-grid, .projects-grid, .certs-grid {
+  .certs-grid {
     display: flex !important;
     flex-direction: row !important;
     position: static !important;
@@ -1462,14 +1466,10 @@ footer {
     scrollbar-width: none; /* Hide scrollbars */
   }
 
-  .skills-grid::-webkit-scrollbar,
-  .projects-grid::-webkit-scrollbar,
   .certs-grid::-webkit-scrollbar {
     display: none;
   }
 
-  .skills-grid .skill-card,
-  .projects-grid .project-card,
   .certs-grid .cert-card {
     position: static !important;
     scroll-snap-align: start;
@@ -1477,16 +1477,6 @@ footer {
     opacity: 1 !important;
     z-index: auto !important;
     pointer-events: auto !important;
-  }
-
-  .skills-grid .skill-card,
-  .projects-grid .project-card {
-    flex: 0 0 290px !important;
-    width: 290px !important;
-    height: auto !important;
-  }
-
-  .certs-grid .cert-card {
     flex: 0 0 220px !important;
     width: 220px !important;
     height: auto !important;
@@ -1516,5 +1506,32 @@ footer {
 
   .carousel-btn {
     display: none !important;
+  }
+
+  /* Responsive Bento layouts on mobile */
+  .projects-bento-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+
+  .project-bento-card {
+    width: 100% !important;
+    grid-column: auto !important;
+    padding: 1.5rem !important;
+  }
+}
+
+/* Tablet & medium screen Bento layouts */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .projects-bento-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+
+  .project-bento-card {
+    width: calc(50% - 0.75rem) !important;
+    grid-column: auto !important;
   }
 }
