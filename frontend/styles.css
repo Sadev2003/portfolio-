@@ -760,6 +760,10 @@ input:checked + .slider::before {
   justify-content: flex-start;
 }
 
+.bento-full {
+  grid-column: span 6;
+}
+
 .bento-spotlight {
   grid-column: span 3;
 }
